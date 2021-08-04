@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Aquarium {
 
     // Variables
@@ -34,7 +36,29 @@ public class Aquarium {
     }
 
     // set information to variables
+    public void setAquariumType() {
+        this.aquariumType = aquariumType;
+    }
+    public void setVolume() {
+        this.volume = volume;
+    }
+    public void setSetup() {
+        this.setup = setup;
+    }
 
+    // Methods tied to the class
+    public boolean isSetup(boolean setup) {
+        Scanner scanner = new Scanner(System.in);
+        boolean aquariumSet = true;
+        System.out.println("Is this aquarium setup?");
+        String aquariumSetAnswer = scanner.nextLine();
+        if (aquariumSetAnswer == "Yes") {
+
+        } else {
+
+        }
+        return setup;
+    }
 
 
 
