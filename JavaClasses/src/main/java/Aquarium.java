@@ -1,3 +1,4 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Aquarium {
@@ -47,17 +48,16 @@ public class Aquarium {
     }
 
     // Methods tied to the class
-    public boolean isSetup(boolean setup) {
+    public void isSetup() {
         Scanner scanner = new Scanner(System.in);
-        boolean aquariumSet = true;
         System.out.println("Is this aquarium setup?");
-        String aquariumSetAnswer = scanner.nextLine();
-        if (aquariumSetAnswer == "Yes") {
-
-        } else {
-
+        String aquariumSetAnswer = scanner.nextLine().toUpperCase();
+        if (aquariumSetAnswer == "Y") {
+            System.out.println("Great! In a few days we can add some fish and invertibrates.");
+        } else if (aquariumSetAnswer == "N") {
+            System.out.println("Well, there's no time like today to set it up.");
         }
-        return setup;
+
     }
 
 
