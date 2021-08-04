@@ -16,6 +16,12 @@ public class Aquarium {
         this.setup = setup;
     }
 
+    // Constructor with two of three args (Overloaded)
+    public Aquarium(String aquariumType, int Volume) {
+        this.aquariumType = aquariumType;
+        this.volume = volume;
+    }
+
     // get information from variables
     public String getAquariumType() {
         return aquariumType;
@@ -28,7 +34,7 @@ public class Aquarium {
     }
 
     // set information to variables
-    
+
 
 
 
