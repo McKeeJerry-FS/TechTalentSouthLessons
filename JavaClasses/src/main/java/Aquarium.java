@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class Aquarium {
@@ -48,17 +47,19 @@ public class Aquarium {
     }
 
     // Methods tied to the class
-    public void isSetup() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Is this aquarium setup?");
-        String aquariumSetAnswer = scanner.nextLine().toUpperCase();
-        if (aquariumSetAnswer == "Y") {
-            System.out.println("Great! In a few days we can add some fish and invertibrates.");
-        } else if (aquariumSetAnswer == "N") {
-            System.out.println("Well, there's no time like today to set it up.");
+    public String isSetup(boolean setup) {
+        boolean aquariumSet = setup;
+        String response;
+        if (aquariumSet == true) {
+            response = "Great! In a few days we can add some fish and invertebrates";
+        } else {
+            response = "Well, there's no day like to day to set up the new aquarium";
         }
 
+        return response;
     }
+
+
 
 
 
