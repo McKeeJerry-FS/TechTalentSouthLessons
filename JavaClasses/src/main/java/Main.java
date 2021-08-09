@@ -5,6 +5,7 @@ public class Main {
         // Using the Pet Class
         Pet dog = new Pet("Perri", 1, "Home", "dog");
         dog.getName();
+        System.out.println("My dog's name is " + dog.getName() + ".");
         dog.setAge(2);
         System.out.println("My dog is " + dog.getAge() + " years old.");
 
