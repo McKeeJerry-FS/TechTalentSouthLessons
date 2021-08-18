@@ -1,5 +1,5 @@
 
-package com.tts.weatherapp;
+package com.tts.weatherapp.Model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

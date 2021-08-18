@@ -1,6 +1,6 @@
-package com.tts.weatherapp;
+package com.tts.weatherapp.Service;
 
-import lombok.Value;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
