@@ -25,7 +25,8 @@
             </form>
             <hr>
             <span th:if="${data != null && data.name == 'error'}">
-            Invalid zip code. Weather data not found.</span>
+                    Invalid zip code. Weather data not found.
+                </span>
         </div>
 
         <div class="col col-md-6 offset-md-3">
@@ -38,7 +39,7 @@
                 <p><b>Conditions:</b> <span th:text="${data.weather[0].get('description')}"></span>
 
                     <img th:src="@{${'http://openweathermap.org/img/w/'
-                + data.weather[0].get('icon') + '.png'}}" ></p>
+                + data.weather[0].get('icon') + '.png'}}"></p>
             </div>
         </div>
     </div>

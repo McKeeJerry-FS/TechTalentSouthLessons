@@ -17,10 +17,10 @@ public class WeatherService {
 
    // this annotation can pull a value from our app.properties
     @Value("${api_key}")
-    private String apikey;
+    private String apiKey;
 
     public Response getForecast(String zipCode) {
-        String url = "http://api.openweathermap.org/data/2,5/weather?zip="+zipCode+"&units=imperial&APPID="+apikey;
+        String url = "http://api.openweathermap.org/data/2,5/weather?zip=" + zipCode + "&units=imperial&APPID=" + apiKey;
         RestTemplate restTemplate = new RestTemplate();
         try {
             return restTemplate.getForObject(url, Response.class);

@@ -15,17 +15,18 @@ public class WeatherController {
     @Autowired
     public WeatherService weatherService;
 
-    @GetMapping("/home")
+    @GetMapping()
     public String getIndex(Model model) {
-        Response response = weatherService.getForecast("43210");
-        System.out.println(response.toString());
-        model.addAttribute("data", response);
+        //Response response = weatherService.getForecast("43210");
+        //System.out.println(response.toString());
+        model.addAttribute("request", new Request());
         return "index";
     }
 
     @PostMapping
     public String postIndex(Request request, Model model){
-        model.addAttribute("request", new Request());
+        Response data = weatherService.getForecast(request.getZipCode());
+        model.addAttribute("data", data);
         return "index";
     }
 }
