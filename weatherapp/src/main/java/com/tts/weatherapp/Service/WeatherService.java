@@ -20,7 +20,8 @@ public class WeatherService {
     private String apiKey;
 
     public Response getForecast(String zipCode) {
-        String url = "http://api.openweathermap.org/data/2,5/weather?zip=" + zipCode + "&units=imperial&APPID=" + apiKey;
+        String url = "http://api.openweathermap.org/data/2.5/weather?zip="
+                + zipCode + "&units=imperial&appid=" + apiKey;
         RestTemplate restTemplate = new RestTemplate();
         try {
             return restTemplate.getForObject(url, Response.class);
