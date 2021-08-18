@@ -29,4 +29,21 @@ public class Response {
     private String id;
     private String name;
     private String cod;
+
+    @Override
+    public String toString() {
+        return "Response{" +
+                "coord=" + coord +
+                ", weather=" + weather +
+                ", base='" + base + '\'' +
+                ", main=" + main +
+                ", wind=" + wind +
+                ", clouds=" + clouds +
+                ", dt='" + dt + '\'' +
+                ", sys=" + sys +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", cod='" + cod + '\'' +
+                '}';
+    }
 }

@@ -3,6 +3,7 @@ package com.tts.weatherapp.Service;
 import com.tts.weatherapp.Model.Response;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 /*
@@ -19,11 +20,16 @@ public class WeatherService {
     private String apikey;
 
     public Response getForecast(String zipCode) {
-        String url = "http://api.openweathermap.org/data/2,5/weather?zip="
-                + zipCode + "&units=imperial&appid=" + apikey;
+        String url = "http://api.openweathermap.org/data/2,5/weather?zip="+zipCode+"&units=imperial&APPID="+apikey;
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.getForObject(url, Response.class);
-
+        try {
+            return restTemplate.getForObject(url, Response.class);
+        }
+        catch (HttpClientErrorException ex){
+            Response response = new Response();
+            response.setName("error");
+            return response;
+        }
     }
 
 }
