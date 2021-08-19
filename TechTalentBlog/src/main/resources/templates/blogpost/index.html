@@ -5,16 +5,19 @@
     <title>Tech Talent Blog</title>
 </head>
 <body>
-
-<h1>Welcome To Our Blog Post Site</h1>
-<h3>Check out our blogs!</h3>
 <div>
+  <header>
+    <h1>Welcome To Our Blog Post Site</h1>
+  </header>
+</div>
+<div>
+    <h3>Check out our blogs!</h3>
     <p>Please use the form below to submit a blog post</p>
 </div>
-
 <div>
-    <form action="#" th:action="@{/}" th:object="${blogpost}" method="post">
+    <form action="#" th:action="@{/}" th:object="${blogPost}" method="post">
         <table>
+
             <tr>
                 <td>Title</td>
                 <td><input type="text" th:field="*{title}" /></td>
@@ -36,5 +39,10 @@
         </table>
     </form>
 </div>
+
 </body>
 </html>
+
+
+
+
