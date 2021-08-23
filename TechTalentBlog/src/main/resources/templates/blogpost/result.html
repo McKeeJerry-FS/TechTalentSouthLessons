@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
     <div>
@@ -15,14 +16,19 @@
       <p>Thank you for your submission!</p>
     </div>
 
-    <div>
+    <div class="container">
       <h4>Blog Post:</h4>
       <p th:text="${title}" />
       <p th:text="${author}" />
       <p th:text="${blogEntry}" />
     </div>
+    <div>
+        <a th:href="@{/}"><button class="btn btn-success">Back to the Home Page</button></a>
+        <a th:href="@{/}"><button class="btn btn-primary">Submit a New Blog Post</button></a>
+    </div>
 
-
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 </body>
 
 </html>

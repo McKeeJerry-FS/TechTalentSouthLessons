@@ -3,45 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Tech Talent Blog</title>
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div>
-  <header>
-    <h1>Welcome To Our Blog Post Site</h1>
-  </header>
-</div>
-<div>
-    <h3>Check out our blogs!</h3>
-    <p>Please use the form below to submit a blog post</p>
-</div>
-<div>
-    <form action="#" th:action="@{/}" th:object="${blogPost}" method="post">
-        <table>
+    <div class="container">
+        <div>
+          <header>
+            <h1>Welcome To Our Blog Post Site</h1>
+          </header>
+        </div>
 
-            <tr>
-                <td>Title</td>
-                <td><input type="text" th:field="*{title}" /></td>
-            </tr>
+        <div>
+            <h3>Check out our blogs!</h3>
+            <p>Please use the form below to submit a blog post</p>
+        </div>
 
-            <tr>
-                <td>Author</td>
-                <td><input type="text" th:field="*{author}" /></td>
-            </tr>
+        <div>
 
-            <tr>
-                <td>Blog Entry</td>
-                <td><input type="text" th:field="*{blogEntry}" /></td>
-            </tr>
+            <div class="row">
+                <div th:each="blog : ${posts}">
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <p th:text="${blog.title}" />
 
-            <tr>
-                <td><button type="submit">Submit Your Post</button></td>
-            </tr>
-        </table>
-    </form>
-</div>
+                            </div>
+                            <div class="panel-body">
+                                <p th:text="${blog.author}" />
+                                <p th:text="${blog.blogEntry}" />
 
+                            </div>
+                            <div class="panel-footer">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a th:href="@{/blogposts/new}">
+            <button class="btn btn-primary">Submit a New Blog Post</button>
+        </a>
+    </div>
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="webjars/jquery/1.9.1/jquery.min.js"></script>
 </body>
 </html>
+
+
+
+
 
 
 
