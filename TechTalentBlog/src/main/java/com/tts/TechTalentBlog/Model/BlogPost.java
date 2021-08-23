@@ -10,7 +10,7 @@ public class BlogPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
     private String title;
     private String author;
     private String blogEntry;
@@ -25,7 +25,7 @@ public class BlogPost {
 
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
