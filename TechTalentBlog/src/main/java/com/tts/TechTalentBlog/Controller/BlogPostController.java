@@ -5,10 +5,12 @@ import com.tts.TechTalentBlog.Repository.BlogPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.List;
+
 
 @Controller
 public class BlogPostController {
@@ -16,13 +18,13 @@ public class BlogPostController {
     @Autowired
     private BlogPostRepository blogPostRepository;
 
-    @GetMapping("/blogposts")
+    @GetMapping("/")
     public String index(BlogPost blogPost, Model model) {
         model.addAttribute("posts", blogPostRepository.findAll());
         return "blogpost/index";
     }
 
-    @PostMapping("/")
+    @PostMapping("/blogposts")
     public String addNewBlogPost(BlogPost blogPost, Model model) {
         blogPostRepository.save(blogPost);
         // posts.add(blogPost);
@@ -37,5 +39,9 @@ public class BlogPostController {
         return "blogposts/new";
     }
 
-
+    @DeleteMapping("/blogposts/{id}")
+    public String deletePostById(@PathVariable Long id, BlogPost blogPost){
+       blogPostRepository.deleteById(id);
+       return "blogposts/index";
+    }
 }
