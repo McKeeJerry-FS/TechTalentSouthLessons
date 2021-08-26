@@ -7,7 +7,7 @@ public class Application {
     String address;
     String eMail;
 
-    ArrayList<String> addressBookEntry = new ArrayList<>();
+    ArrayList<String> addressBookEntry = new ArrayList();
 
 
     public void addAnEntry() {
@@ -38,13 +38,14 @@ public class Application {
         System.out.println("E-mail: " + eMail);
         UI.Separator();
         int index = 1;
+
         addressBookEntry.add(index, firstName + " " + lastName + " " + address + " " + eMail);
         index++;
         Menu mainMenu = new Menu();
         mainMenu.Init();
     }
 
-    public void printAddressBook(List<String> addressBookEntry){
+    public void printAddressBook(ArrayList<String> addressBookEntry){
 
         for (int i = 0; i < addressBookEntry.size(); i++){
             System.out.println(addressBookEntry.get(i));
@@ -54,18 +55,38 @@ public class Application {
 
     public void removeAnEntry() {
         UI.Header("Remove An Entry");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Press RETURN to continue");
+        scan.next();
+        Menu mainMenu = new Menu();
+        mainMenu.Init();
     }
 
     public void searchForAnEntry(){
         UI.Header("Search for An Entry");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Press RETURN to continue");
+        scan.next();
+        Menu mainMenu = new Menu();
+        mainMenu.Init();
     }
 
     public void printAddressBook(){
         UI.Header("Print the Address Book");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Press RETURN to continue");
+        scan.next();
+        Menu mainMenu = new Menu();
+        mainMenu.Init();
     }
 
     public void deleteAddressBook(){
         UI.Header("Delete the Address Book");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Press RETURN to continue");
+        scan.next();
+        Menu mainMenu = new Menu();
+        mainMenu.Init();
     }
 }
 
