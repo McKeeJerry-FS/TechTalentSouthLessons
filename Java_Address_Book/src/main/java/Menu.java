@@ -32,6 +32,22 @@ public class Menu {
         Application app = new Application();
         switch (userChoice) {
             case 1: app.addAnEntry();
+                break;
+            case 2: app.removeAnEntry();
+                break;
+            case 3: app.searchForAnEntry();
+                break;
+            case 4: app.printAddressBook();
+                break;
+            case 5: app.deleteAddressBook();
+                break;
+            case 0:
+               break;
+            default:
+                System.out.println("Please choose a valid option");
+                Menu mainMenu = new Menu();
+                mainMenu.Init();
+                break;
         }
     }
 

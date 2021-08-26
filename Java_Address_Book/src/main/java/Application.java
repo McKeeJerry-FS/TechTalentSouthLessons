@@ -18,21 +18,25 @@ public class Application {
         String addAnEMail = "What is the person's E-Mail Address?";
         Scanner scan = new Scanner(System.in);
 
+        UI.Header("Add An Entry");
         System.out.println(addAFirstName);
         firstName = scan.nextLine();
+        UI.Separator();
         System.out.println(addALastName);
         lastName = scan.nextLine();
+        UI.Separator();
         System.out.println(addAnAddress);
         address = scan.nextLine();
+        UI.Separator();
         System.out.println(addAnEMail);
         eMail = scan.nextLine();
-
+        UI.Separator();
         System.out.println("Here is what you have entered:");
         System.out.println("First Name: " + firstName);
         System.out.println("Last Name: " + lastName);
         System.out.println("Address: " + address);
         System.out.println("E-mail: " + eMail);
-
+        UI.Separator();
         int index = 1;
         addressBookEntry.add(index, firstName + " " + lastName + " " + address + " " + eMail);
         index++;
@@ -48,20 +52,20 @@ public class Application {
 
     }
 
-    private void removeAnEntry() {
-
+    public void removeAnEntry() {
+        UI.Header("Remove An Entry");
     }
 
-    private void searchForAnEntry(){
-
+    public void searchForAnEntry(){
+        UI.Header("Search for An Entry");
     }
 
-    private void printAddressBook(){
-
+    public void printAddressBook(){
+        UI.Header("Print the Address Book");
     }
 
-    private void deleteAddressBook(){
-
+    public void deleteAddressBook(){
+        UI.Header("Delete the Address Book");
     }
 }
 
