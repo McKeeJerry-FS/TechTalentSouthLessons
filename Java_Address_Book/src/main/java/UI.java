@@ -5,10 +5,12 @@ public class UI {
         System.out.println("======================================");
         System.out.println(text.toUpperCase());
         System.out.println("======================================");
+
     }
 
     public static void Separator(){
         System.out.println("**************************************");
+        System.out.println();
     }
 }
 

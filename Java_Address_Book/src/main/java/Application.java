@@ -10,7 +10,7 @@ public class Application {
     ArrayList<String> addressBookEntry = new ArrayList<>();
 
 
-    private void addAnEntry() {
+    public void addAnEntry() {
 
         String addAFirstName = "What is the person's First Name?";
         String addALastName = "What is the person's Last Name?";
@@ -36,9 +36,11 @@ public class Application {
         int index = 1;
         addressBookEntry.add(index, firstName + " " + lastName + " " + address + " " + eMail);
         index++;
+        Menu mainMenu = new Menu();
+        mainMenu.Init();
     }
 
-    private void viewAddressBook(List<String> addressBookEntry){
+    public void printAddressBook(List<String> addressBookEntry){
 
         for (int i = 0; i < addressBookEntry.size(); i++){
             System.out.println(addressBookEntry.get(i));

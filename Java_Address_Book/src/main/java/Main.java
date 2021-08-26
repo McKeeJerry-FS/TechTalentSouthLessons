@@ -2,18 +2,9 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args){
-        Application add = new Application();
-        ArrayList<String> menuItems = new ArrayList<String>();
-        menuItems.add("Add an Entry");
-        menuItems.add("Remove an Entry");
-        menuItems.add("Search");
-        menuItems.add("Print Address Book");
-        menuItems.add("Delete Address Book");
-
-
-
+        //Application add = new Application();
         Menu mainMenu = new Menu();
-        mainMenu.Init("Main Menu", menuItems);
+        mainMenu.Init();
     }
 
     // Things to do
