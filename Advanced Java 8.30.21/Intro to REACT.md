@@ -27,30 +27,27 @@ React is a declarative, efficient, and flexible JavaScript library for building 
 
 https://reactjs.org/docs/getting-started.html
 
-*CRA (Create React App)
-	
-* React Toolchain that installs React with additional opinionated technologies
-*CDN (Content Delivery Network)
-
-* 	Add React to any project
-* 	Loads React through a link
-
-*Online Playgrounds
-
-* Great for tinkering, trying out and sharing project ideas
-* Very easy to get started
+* CRA (Create React App)
+	* React Toolchain that installs React with additional opinionated technologies
+* CDN (Content Delivery Network)
+	* 	Add React to any project
+	* 	Loads React through a link
+* Online Playgrounds
+	* Great for tinkering, trying out and sharing project ideas
+	* Very easy to get started
 
 
-## Challenge: Props
+## Challenge: Props (Assignment for 8.30)
 
- Build a new React Application called my-movies. 
-Run through and follow the setup with create-react-app
-We will be building on this application in the next three classes
-You'll build an application that has Collections and Movies within those Collections. 
-Each movie should have the data points of:
-Title
-Description
-Year
-Genre
-Create custom styles for the application
-Validate for type on any data you are passing. 
+* Build a new React Application called my-movies. 
+	1. Run through and follow the setup with create-react-app
+	1. We will be building on this application in the next three classes
+* You'll build an application that has Collections and Movies within those Collections. 
+* Each movie should have the data points of:
+	1. 	Title
+	1. 	Description
+	1. 	Year
+	1. 	Genre
+* Create custom styles for the application
+* Validate for type on any data you are passing.
+* This application will built upon over the next week during React lessons
