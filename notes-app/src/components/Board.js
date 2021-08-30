@@ -12,8 +12,9 @@ class Board extends Component {
       <div>
         <div className="div-board">
           <div className="row">
-            <Note />
-            <Note />
+            <Note title="Class Notes" body="Always use constructors when extending another class "/>
+            <Note title="Bloop" body="bloop"/>
+            <Note title="Third Note" body="third note"/>
             <Note />
           </div>
         </div>
