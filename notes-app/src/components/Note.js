@@ -14,8 +14,8 @@ class Note extends Component {
           <div className="card-body">
             <h5 className="card-title">{this.props.title}</h5>
             <p>{this.props.body}</p>
-            <button className="btn btn-info " margin="5">Edit</button>
-            <button className="btn btn-danger">Delete</button>
+            <button className="btn btn-info " margin="5" padding="2">Edit</button>
+            <button className="btn btn-danger"margin="5" padding="2">Delete</button>
           </div>
         </div>
       </div>
