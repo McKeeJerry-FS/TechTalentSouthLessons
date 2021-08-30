@@ -1,4 +1,4 @@
-# Intro to REACT
+# Intro to REACT - Week 1/Day 1
 
 ## What we'll learn
 * REact Background
@@ -51,3 +51,14 @@ https://reactjs.org/docs/getting-started.html
 * Create custom styles for the application
 * Validate for type on any data you are passing.
 * This application will built upon over the next week during React lessons
+
+
+# React Day 2
+## What we'll learn:
+
+* State
+* Hooks
+* Lifecycle Methods
+* Handling Events
+* Our Notes App - continue building out the React App
+
