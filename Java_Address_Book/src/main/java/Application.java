@@ -2,6 +2,7 @@ import java.util.*;
 
 public class Application {
 
+    // Fields
     String firstName;
     String lastName;
     String address;
@@ -11,16 +12,20 @@ public class Application {
 
 
     public ArrayList<String> addAnEntry() {
-
+        // variables
         String addAFirstName = "What is the person's First Name?";
         String addALastName = "What is the person's Last Name?";
         String addAnAddress = "What is the person's Address";
         String addAnEMail = "What is the person's E-Mail Address?";
+
         Scanner scan = new Scanner(System.in);
+
         String firstName;
         String lastName;
         String address;
         String eMail;
+
+        // Address Entry
         UI.Header("Add An Entry");
         System.out.println(addAFirstName);
         firstName = scan.nextLine();
@@ -34,20 +39,29 @@ public class Application {
         System.out.println(addAnEMail);
         eMail = scan.nextLine();
         UI.Separator();
+
+        // Entry Confirmation
         System.out.println("Here is what you have entered:");
         System.out.println("First Name: " + firstName);
         System.out.println("Last Name: " + lastName);
         System.out.println("Address: " + address);
         System.out.println("E-mail: " + eMail);
         UI.Separator();
+
+        // Continuation of the application - adding entry to ArrayList
         System.out.println("Please press any key to continue");
         scan.next();
-        ArrayList<String> addressBookEntry = new ArrayList<>();
-        int index = 1;
+        //ArrayList<String> addressBookEntry = new ArrayList<>();
+        int index = 0;
         addressBookEntry.add(index, firstName + " " + lastName + " " + address + " " + eMail);
         index++;
+
+        // Return to Main Menu
+        System.out.println(4);
         Menu main = new Menu();
+        System.out.println(5);
         main.Init();
+        System.out.println(6);
         return addressBookEntry;
     }
 
