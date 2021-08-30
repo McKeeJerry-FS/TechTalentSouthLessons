@@ -39,3 +39,18 @@ https://reactjs.org/docs/getting-started.html
 
 * Great for tinkering, trying out and sharing project ideas
 * Very easy to get started
+
+
+## Challenge: Props
+
+ Build a new React Application called my-movies. 
+Run through and follow the setup with create-react-app
+We will be building on this application in the next three classes
+You'll build an application that has Collections and Movies within those Collections. 
+Each movie should have the data points of:
+Title
+Description
+Year
+Genre
+Create custom styles for the application
+Validate for type on any data you are passing. 
