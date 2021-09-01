@@ -22,16 +22,25 @@ export default class PetStore extends Component{
         this.setState({petAge:event.target.value})
     }
     
-    handleClick=()=>{
-        let petObj = {petName:this.state.petName};
+    handleClick = () => {
+        let petObj = {
+            petName: this.state.petName,
+            petBreed: this.state.petBreed,
+            petAge: this.state.petAge,
+        };
+
         this.setState(
-            {petList: [...this.state.petList, petObj], 
-            petName: '', 
-            petBreed:'', 
-            petAge: 0,});
+            {
+                petList: [...this.state.petList, petObj],
+                petName: "",
+                petBreed: "",
+                petAge: 0
+            }
+        )
     }
     
     render(){
+        
         let petElementArr = this.state.petList.map((animal, index)=>{
           return(
             <div key={index}>
@@ -41,6 +50,7 @@ export default class PetStore extends Component{
             </div>
           )
         })
+        
         return(
           <div>
             <h4>Pet Store Animal List</h4>

@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { Component } from 'react';
-import petStore from Component;
+import petStore from './PetStore';
 
 function App() {
 
