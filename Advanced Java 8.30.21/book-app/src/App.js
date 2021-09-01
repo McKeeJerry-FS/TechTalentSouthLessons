@@ -1,25 +1,25 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import BookList from './components/BookList';
+import { mapIntoObject, data } from './components/Book';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends React.Component {
+  state = {
+      books: mapIntoObject(data.books),
+      authors: mapIntoObject(data.authors)
+  };
+  bookActions = {
+      lookupAuthor: authorId => this.state.authors[authorId],
+  };
+  render() {
+    console.log(this.bookActions)
+      return (
+          <BookList
+          books={this.state.books}
+          bookActions={this.bookActions}
+          />
+      );
+  }
 }
-
-export default App;

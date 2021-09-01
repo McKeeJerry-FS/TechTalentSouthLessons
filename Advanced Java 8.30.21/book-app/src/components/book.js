@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import Book from './Book';
 
-const data = {
+export const data = {
     books: [
         {   id: 'b1',
             title: 'Coders at Work',
@@ -31,15 +30,16 @@ const data = {
     ]
 };
 
-function mapIntoObject(arr) {
+export function mapIntoObject(arr) {
     return arr.reduce(function(acc, curr) {
         acc[curr.id] = curr;
         return acc;
     }, {});
 }
 
-class Book extends React.Component {
+export default class Book extends React.Component {
     render() {
+        console.log(this.props.actions)
         const { book } = this.props;
         const author = this.props.actions.lookupAuthor(book.authorId);
         return (
@@ -53,38 +53,7 @@ class Book extends React.Component {
     }
 }
 
-class BookList extends React.Component
-{
-    render() {
-        return (
-            <div>
-                {Object.values(this.props.books).map(book =>
-                    <Book key={book.id}
-                    book={book}
-                    author={this.props.bookActions}
-                    />
-                )}
-            </div>
-        ); 
-    };
-}
 
-class App extends React.Component {
-    state = {
-        books: mapIntoObject(data.books),
-        authors: mapIntoObject(data.authors)
-    };
-    bookActions = {
-        lookupAuthor: authorId => this.state.authors[authorId],
-    };
-    render() {
-        return (
-            <BookList
-            books={this.state.books}
-            bookActions={this.bookActions}
-            />
-        );
-    }
-}
 
-ReactDOM.render(<App />, mountNode);
+
+
