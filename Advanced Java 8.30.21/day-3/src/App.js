@@ -1,5 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
+import { Component } from 'react';
+import petStore from Component;
 
 function App() {
 
@@ -15,7 +17,7 @@ function App() {
   ]
 
   let elements = data.map((person, index ) =>
-    <li>Name: {person.name} Location: {person.location}</li>
+    <li key={index}>Name: {person.name} Location: {person.location}</li>
   )
 
   return (
@@ -23,6 +25,8 @@ function App() {
       <ul>
         {elements}
       </ul>
+      <br></br>
+      <petStore />
     </div>
   );
 }
