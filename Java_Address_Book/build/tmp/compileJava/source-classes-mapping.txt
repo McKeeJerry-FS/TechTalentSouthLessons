@@ -1,8 +1,0 @@
-UI.java
- UI
-Main.java
- Main
-Application.java
- Application
-Menu.java
- Menu
