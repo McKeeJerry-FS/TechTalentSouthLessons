@@ -80,20 +80,15 @@ class Routes extends Component {
           <Navbar />
           <hr />
           <Route name="Home" exact path="/" Component={Home} />
-          <Route name="Home" exact path="/menu" Component={Menu} />
-          <Route name="Home" exact path="/about" Component={About} />
+          <Route name="Menu" exact path="/menu" Component={Menu} />
+          <Route name="About" exact path="/about" Component={About} />
         </div>
       </Router>
     );
   }
 }
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+ReactDOM.render(<Routes />, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
