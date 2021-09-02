@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import {
   BrowserRouter as Router, // we are aliasing this module for a cleaner call
@@ -9,6 +9,53 @@ import {
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+
+// Classes
+class Home extends Component {
+  render() {
+    return (
+      <div>
+        <h1>React Router Restaurant</h1>
+        <h4>Serving up URLs like mama used to make!</h4>
+        <img src="https://i0.wp.com/68.media.tumblr.com/159d31bca61108d5bd1a8dedf5c14dfe/tumblr_otlasg917I1ql7xb0o6_1280.gif?" />
+      </div>
+    );
+  }
+}
+
+class About extends Component {
+
+  render() {
+    return(
+      <div>
+        <h1>About Us</h1>
+        <p>We here at the Triple-R love fresh URLs, especially ones tied to awesome React Components.</p>
+        <p>It's even better when you can switch between those URLs with ease and share them with friends and family</p>
+      </div>
+    );
+  }
+}
+
+// Menu component
+
+class Menu extends Component {
+  render(){
+    return(
+      <div>
+        <h1>Menu</h1>
+        <p>Check out our amazing 24/7 menu:
+          <ul>
+            <li>Lazy Loading</li>
+            <li>Dynamic Route Matching</li>
+            <li>Location Transition Handling</li>
+          </ul>
+        </p>
+      </div>
+    );
+  }
+}
+
 
 ReactDOM.render(
   <React.StrictMode>
