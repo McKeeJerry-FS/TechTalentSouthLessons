@@ -69,6 +69,23 @@ class Navbar extends Component {
   }
 }
 
+
+class Routes extends Component {
+  render() {
+    return(
+      <Router>
+        <div>
+          <Navbar />
+          <hr />
+          <Route name="Home" exact path="/" Component={Home} />
+          <Route name="Home" exact path="/menu" Component={Menu} />
+          <Route name="Home" exact path="/about" Component={About} />
+        </div>
+      </Router>
+    );
+  }
+}
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
