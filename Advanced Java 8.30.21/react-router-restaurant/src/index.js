@@ -12,6 +12,7 @@ import reportWebVitals from './reportWebVitals';
 
 
 // Classes
+// Home Component
 class Home extends Component {
   render() {
     return (
@@ -24,6 +25,7 @@ class Home extends Component {
   }
 }
 
+// About Component
 class About extends Component {
 
   render() {
@@ -56,7 +58,7 @@ class Menu extends Component {
   }
 }
 
-// Creating a Navbar
+// Creating a Navbar Component
 class Navbar extends Component {
   render(){
     return (
@@ -69,7 +71,7 @@ class Navbar extends Component {
   }
 }
 
-
+// Routes Component
 class Routes extends Component {
   render() {
     return(
