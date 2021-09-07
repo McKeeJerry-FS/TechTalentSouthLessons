@@ -15,6 +15,14 @@
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-app.js";
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-analytics.js";
+      import {
+        getDatabase,
+        ref,
+        onValue,
+        set,
+        update,
+        child
+      } from "https://www.gstatic.com/firebasejs/9.0.1/firebase-database.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
     
@@ -34,13 +42,39 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
-
+      const db = getDatabase();
+     
       // code for Reading Simple Data
       var message = document.getElementById('message');
-      var dbRef = firebase.database().ref().child('message');
-      
-      dbRef.On('value', (snapshot) => message.innerText = snapshot.val())
+      //var dbRef = firebase.database().ref().child('message');
+      const dbRef = ref(db, "message");
+      const teacher = child(dbRef, "teacher");
+      console.log(teacher);
 
+      set(dbRef, {
+        className: 'JS',
+        weeks: 10
+      });
+      
+      update(dbRef, {
+        className: 'JS Application Development',
+        students: 15
+      })
+
+
+      onValue(dbRef, (snapshot) => (message.innerText = JSON.stringify(snapshot.val())));
+      // setting a child field
+      set(teacher, {
+        class: 'JS Applications',
+        name: 'Shane',
+        Computer: {
+          type: 'mac',
+          size: '15 inch'
+        }
+      });
+
+      const shanesComputer = child(dbRef, 'teacher/Computer');
+      console.log(shanesComputer);
      </script>
    
   </body>
