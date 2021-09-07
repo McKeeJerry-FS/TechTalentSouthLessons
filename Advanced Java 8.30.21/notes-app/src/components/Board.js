@@ -1,26 +1,18 @@
 import React, { Component } from 'react';
 import '../css/Board.css';
 import Note from './Note';
+import myFirebase from '../Utility/myFirebase';
+import {once} from 'firebase/database';
+
 
 class Board extends Component {
     constructor() {
         super();
         this.state = {
-            notes: [
-                {
-                    title: "Class Notes",
-                    body: "Always use constructors when extending another class",
-                },
-                {
-                    title: "Bloop",
-                    body: "blop",
-                },
-                {
-                    title: "Third title",
-                    body: "Third body",
-                },
-            ]
+            notes: []
         }
+        this.firebaseDBref = myFirebase.getFireBaseRef();
+        this.firebaseDBref.once('value').then((snapshot) => console.log(snapshot.val()));
     }
 
     addNote() {
