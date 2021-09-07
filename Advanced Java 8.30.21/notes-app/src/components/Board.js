@@ -3,6 +3,7 @@ import '../css/Board.css';
 import Note from './Note';
 import myFirebase from '../Utility/myFirebase';
 import {once} from 'firebase/database';
+import {onValue} from 'firebase/database';
 
 
 class Board extends Component {
@@ -12,18 +13,29 @@ class Board extends Component {
             notes: []
         }
         this.firebaseDBref = myFirebase.getFireBaseRef();
-        this.firebaseDBref.once('value').then((snapshot) => console.log(snapshot.val()));
+        //this.firebaseDBref.once('value').then((snapshot) => console.log(snapshot.val()));
+        onValue(this.firebaseDBref, (snapshot) => this.addNote(snapshot.val()), {
+            onlyOnce: true,
+        })
     }
 
-    addNote() {
-        let notes = this.state.notes;
-        notes.push(
-            {
-                title: "New Title",
-                body: "New Body",
-            }
-        );
-        this.setState({notes});
+    addNote(notes) {
+        console.log(notes);
+        if (notes) {
+            for (let key in notes) {
+                this.state.notes.push(
+                    {id : key,
+                    title: notes[key].title,
+                    body: notes[key].body }
+                )
+            };
+        } else {
+            this.state.notes.push (
+                {id: Date.now()}
+            )
+        };
+        
+        this.setState({notes: this.state.notes});
 
     }
 
