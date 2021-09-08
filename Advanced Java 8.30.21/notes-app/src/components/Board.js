@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import '../css/Board.css';
 import Note from './Note';
 import myFirebase from '../Utility/myFirebase';
-import {once} from 'firebase/database';
-import {onValue} from 'firebase/database';
+import {once, remove, set, child, onValue} from 'firebase/database';
 
+const GENERIC_NOTE_TITLE = "New Note Title";
+const GENERIC_NOTE_BODY = "New Note Body";
 
 class Board extends Component {
     constructor() {
@@ -24,31 +25,59 @@ class Board extends Component {
         if (notes) {
             for (let key in notes) {
                 this.state.notes.push(
-                    {id : key,
-                    title: notes[key].title,
-                    body: notes[key].body }
+                    {
+                        id : key,
+                        title: notes[key].title,
+                        body: notes[key].body 
+                    }
                 )
             };
         } else {
-            this.state.notes.push (
-                {id: Date.now()}
-            )
+            let pushRef = push(this.firebaseDBref);
+            set(pushRef, {
+                title: GENERIC_NOTE_TITLE,
+                body: GENERIC_NOTE_BODY,
+            });
+            this.state.notes.push(
+                {
+                    id: pushRef.key,
+                    title: GENERIC_NOTE_TITLE,
+                    body: GENERIC_NOTE_BODY,
+                }
+            );
         };
+        this.setState(
+            {notes: this.state.notes}
+        );
+    }
         
-        this.setState({notes: this.state.notes});
 
+    deleteNote(id) {
+        let newNoteArr = this.state.notes;
+        newNoteArr.map((note, index) => {
+            if (id === note.id) {
+                newNoteArr.splice(index, 1);
+                remove(child(this.firebaseDBref, id));
+            }
+        });
+        this.setState({notes: newNoteArr});
     }
 
+
     render() {
-
-
-        return (
+     return (
             <div>
                 <div className="div-board">
                     <div className="row">
 
                         {
-                         this.state.notes.map(note => <Note title={note.title} body={note.body} />)
+                         this.state.notes.map(note => 
+                         <Note key={note.id}
+                            id={note.id}
+                            title={note.title} 
+                            body={note.body} 
+                            firebaseDBref={this.firebaseDBref}
+                            deleteHandler={this.deleteNote.bind(this)} />)
                         }
           
                     </div>
@@ -64,3 +93,4 @@ class Board extends Component {
 }
 
 export default Board;
+
