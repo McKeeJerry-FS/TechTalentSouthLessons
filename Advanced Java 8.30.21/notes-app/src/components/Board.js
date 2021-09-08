@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/Board.css';
 import Note from './Note';
 import myFirebase from '../Utility/myFirebase';
-import {once, remove, set, child, onValue} from 'firebase/database';
+import {push, remove, set, child, onValue} from 'firebase/database';
 
 const GENERIC_NOTE_TITLE = "New Note Title";
 const GENERIC_NOTE_BODY = "New Note Body";
@@ -83,7 +83,7 @@ class Board extends Component {
                     </div>
                 </div>
                 <div>
-                    <button onClick={this.addNote.bind(this)} className="btn btn-success add-button">
+                    <button onClick={this.addNote.bind(this, null)} className="btn btn-success add-button">
                         Add
                     </button>
                 </div>

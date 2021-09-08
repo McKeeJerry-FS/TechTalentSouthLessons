@@ -20,5 +20,5 @@ const firebaseConfig = {
   }
 
   export default {
-      getFireBaseRef: getFireBaseRef
-  };
+    getFireBaseRef: getFireBaseRef
+};
